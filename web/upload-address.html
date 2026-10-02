@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Address Proof Upload</title>
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Net Banking</h1>
+
+    <h2>Proof of Address</h2>
+
+    <p class="description">
+        Upload your proof of address in PDF format.
+    </p>
+
+    <form action="UploadServlet"
+          method="post"
+          enctype="multipart/form-data">
+
+        <label>Select PDF</label>
+
+        <input type="file"
+               name="addressProof"
+               accept=".pdf"
+               required>
+
+        <button type="submit">
+            Upload Document
+        </button>
+
+    </form>
+
+    <p class="message">
+
+        <a href="dashboard.jsp">
+            Back to Dashboard
+        </a>
+
+    </p>
+
+</div>
+
+</body>
+</html>

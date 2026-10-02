@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>NetBank - Online Banking</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #26364a;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            width: 100%;
+            height: 72px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            color: #315c8c;
+        }
+
+        .logo span {
+            color: #5b8db8;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #425466;
+            font-size: 15px;
+        }
+
+        .nav-links a:hover {
+            color: #315c8c;
+        }
+
+        .login-btn {
+            background: #5b8db8;
+            color: white !important;
+            padding: 11px 24px;
+            border-radius: 7px;
+        }
+
+        .login-btn:hover {
+            background: #47779f;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 530px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 70px 8%;
+            background: linear-gradient(
+                135deg,
+                #edf5fb,
+                #f8fbfe
+            );
+        }
+
+        .hero-text {
+            width: 52%;
+        }
+
+        .hero-text h1 {
+            font-size: 50px;
+            line-height: 1.15;
+            color: #284e76;
+            margin-bottom: 22px;
+        }
+
+        .hero-text h1 span {
+            color: #5b8db8;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #607080;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .primary-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: #5b8db8;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .primary-btn:hover {
+            background: #47779f;
+        }
+
+        .secondary-btn {
+            display: inline-block;
+            text-decoration: none;
+            background: white;
+            color: #315c8c;
+            padding: 14px 30px;
+            border: 1px solid #b9cad9;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .secondary-btn:hover {
+            background: #edf5fb;
+        }
+
+        /* HERO CARD */
+
+        .hero-card {
+            width: 390px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 40px rgba(49,92,140,0.12);
+        }
+
+        .bank-card {
+            height: 210px;
+            border-radius: 18px;
+            padding: 25px;
+            background: linear-gradient(
+                135deg,
+                #315c8c,
+                #76a4c7
+            );
+            color: white;
+            position: relative;
+        }
+
+        .bank-name {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .chip {
+            width: 48px;
+            height: 35px;
+            background: #e6d8a7;
+            border-radius: 7px;
+            margin-top: 35px;
+        }
+
+        .card-number {
+            margin-top: 20px;
+            font-size: 18px;
+            letter-spacing: 3px;
+        }
+
+        .card-bottom {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 17px;
+            font-size: 12px;
+        }
+
+        /* FEATURES */
+
+        .features {
+            padding: 70px 8%;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: #315c8c;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #718092;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .feature-card {
+            background: #f8fbfe;
+            padding: 30px 22px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid #e4edf4;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            background: #e7f1f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 27px;
+        }
+
+        .feature-card h3 {
+            color: #315c8c;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #718092;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+
+        /* SECURITY */
+
+        .security {
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .security-text {
+            width: 50%;
+        }
+
+        .security-text h2 {
+            font-size: 32px;
+            color: #315c8c;
+            margin-bottom: 18px;
+        }
+
+        .security-text p {
+            color: #657587;
+            line-height: 1.7;
+        }
+
+        .security-box {
+            width: 400px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+        }
+
+        .security-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .check {
+            color: #4f8b67;
+            font-size: 20px;
+        }
+
+        .security-item h4 {
+            color: #315c8c;
+            margin-bottom: 5px;
+        }
+
+        .security-item p {
+            color: #758292;
+            font-size: 13px;
+        }
+
+        /* CTA */
+
+        .cta {
+            margin: 20px 8% 70px;
+            padding: 55px;
+            text-align: center;
+            border-radius: 18px;
+            background: #eaf3fb;
+        }
+
+        .cta h2 {
+            color: #315c8c;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #667788;
+            margin-bottom: 25px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #284e76;
+            color: white;
+            padding: 40px 8% 25px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .footer-section {
+            width: 30%;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 15px;
+        }
+
+        .footer-section p {
+            color: #d8e3ed;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .footer-section a {
+            display: block;
+            color: #d8e3ed;
+            text-decoration: none;
+            margin-bottom: 9px;
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #537494;
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+            color: #d8e3ed;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 900px) {
+
+            .nav-links a:not(.login-btn) {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-text {
+                width: 100%;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .feature-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .security {
+                flex-direction: column;
+            }
+
+            .security-text {
+                width: 100%;
+            }
+
+            .security-box {
+                width: 100%;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-section {
+                width: 100%;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .hero-card {
+                width: 100%;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo">
+        Net<span>Bank</span>
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="#home">Home</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#security">Security</a>
+
+        <a href="login.html" class="login-btn">
+            Login
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- HERO SECTION -->
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+        <h1>
+            Banking made
+            <span>simple and secure.</span>
+        </h1>
+
+        <p>
+            Manage your money, transfer funds, calculate loans,
+            upload documents and view your transactions from
+            one convenient online banking platform.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="login.html" class="primary-btn">
+                Login to NetBank
+            </a>
+
+            <a href="register.html" class="secondary-btn">
+                Open an Account
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="bank-card">
+
+            <div class="bank-name">
+                NetBank
+            </div>
+
+            <div class="chip"></div>
+
+            <div class="card-number">
+                4587  ****  ****  8294
+            </div>
+
+            <div class="card-bottom">
+
+                <span>
+                    CUSTOMER
+                </span>
+
+                <span>
+                    VALID THRU 12/30
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="features" id="services">
+
+    <div class="section-title">
+
+        <h2>Banking Services</h2>
+
+        <p>
+            Everything you need for convenient online banking
+        </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                💳
+            </div>
+
+            <h3>Transactions</h3>
+
+            <p>
+                Record and view your banking transactions
+                securely.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                💰
+            </div>
+
+            <h3>Loan Calculator</h3>
+
+            <p>
+                Calculate loan interest and total payable
+                amount easily.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📄
+            </div>
+
+            <h3>Document Upload</h3>
+
+            <p>
+                Upload your proof-of-address PDF securely
+                through the portal.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🔐
+            </div>
+
+            <h3>Secure Login</h3>
+
+            <p>
+                Access your banking account using secure
+                session-based authentication.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SECURITY -->
+
+<section class="security" id="security">
+
+    <div class="security-text">
+
+        <h2>
+            Your security matters to us.
+        </h2>
+
+        <p>
+            NetBank provides a secure online banking environment
+            where customers can access their account services
+            conveniently. Your banking activities are protected
+            through authentication and session management.
+        </p>
+
+    </div>
+
+
+    <div class="security-box">
+
+        <div class="security-item">
+
+            <div class="check">✓</div>
+
+            <div>
+                <h4>Secure Authentication</h4>
+
+                <p>
+                    Login credentials are verified before
+                    accessing banking services.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="security-item">
+
+            <div class="check">✓</div>
+
+            <div>
+                <h4>Session Management</h4>
+
+                <p>
+                    Customer sessions are maintained while
+                    using the banking portal.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="security-item">
+
+            <div class="check">✓</div>
+
+            <div>
+                <h4>Database Storage</h4>
+
+                <p>
+                    Customer transactions are permanently
+                    stored using a relational database.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="cta">
+    <h2>
+        Ready to start banking online?
+    </h2>
+    <p>
+        Create your NetBank account and access your
+        banking services online.
+    </p>
+    <a href="register.html" class="primary-btn">
+        Create Your Account
+    </a>
+</section>
+<footer> 
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>NetBank</h3>
+            <p>
+                A simple and convenient online banking portal
+                for managing your banking services.
+            </p>
+        </div>
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </div>
+        <div class="footer-section">
+
+            <h3>Banking Services</h3>
+            <a href="loan.html">
+                Loan Calculator
+            </a>
+            <a href="upload-address.html">
+                Document Upload
+            </a>
+            <a href="TransactionServlet">
+                Transactions
+            </a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2026 NetBank. All Rights Reserved.
+    </div>
+</footer>
+</body>
+</html>

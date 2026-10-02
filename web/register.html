@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Net Banking - Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Net Banking</h1>
+    <h2>Register</h2>
+
+    <form action="RegisterServlet" method="post">
+
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Create Account</button>
+
+    </form>
+
+    <p class="message">
+        Already registered?
+        <a href="index.html">Login</a>
+    </p>
+
+</div>
+
+</body>
+</html>
