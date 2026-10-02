@@ -459,3 +459,59 @@ BSc Information Technology
 ## 📄 License
 
 This project is created for educational and academic purposes.
+
+## 📸 Project Screenshots
+
+### 🏠 Home Page
+
+![Home Page 1](SCREENSHOOTS/HOME%201.png)
+
+![Home Page 2](SCREENSHOOTS/HOME%202.png)
+
+![Home Page 3](SCREENSHOOTS/HOME%203.png)
+
+### 📝 Registration
+
+![Registration 1](SCREENSHOOTS/REGISTER%201.png)
+
+![Registration 2](SCREENSHOOTS/REGISTER%202.png)
+
+![Registration 3](SCREENSHOOTS/REGISTER%203.png)
+
+### 🔐 Login
+
+![Login](SCREENSHOOTS/LOGIN.png)
+
+![Login 2](SCREENSHOOTS/LOGIN%202.png)
+
+### 📊 Dashboard
+
+![Dashboard](SCREENSHOOTS/DASHBOARD.png)
+
+### 📄 Proof-of-Address Upload
+
+![Upload Address 1](SCREENSHOOTS/UPLAOD%20ADDRESS%201.png)
+
+![Upload Address 2](SCREENSHOOTS/UPLOAD%20ADDRESS%202.png)
+
+![Upload Address 3](SCREENSHOOTS/UPLOAD%20ADDRESS%203.png)
+
+### 🏦 Loan Calculator
+
+![Loan Calculator 1](SCREENSHOOTS/LOAN%20CALCULATOR%201.png)
+
+![Loan Calculator 2](SCREENSHOOTS/LOANN%20CALCULATOR%202.png)
+
+![Loan Calculator 3](SCREENSHOOTS/LOAN%20CALCULATOR%203.png)
+
+### 💳 Transactions
+
+![Transaction](SCREENSHOOTS/TRANSACTION.png)
+
+### 🗄️ Database
+
+![Address Upload Database](SCREENSHOOTS/DATABASE%20UPLAOD%20ADDRESS.png)
+
+![Transaction Database](SCREENSHOOTS/DATABASE%20TRANSACTION.png)
+
+![Registration Database](SCREENSHOOTS/DATABASE%20REGISTER.png)
